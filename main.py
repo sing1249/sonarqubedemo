@@ -1,28 +1,33 @@
 ### SonarQube Demo Repository Setup
-# This sample Python script is designed to demonstrate SonarQube integration with GitHub.
+# This Python script demonstrates a clean implementation for SonarQube integration with GitHub.
 
-# Sample Python Function with multiple issues
-def sample_function():
-    unused_variable = 10  # Unused variable (Code Smell)
-
-    for i in range(5):  # Loop variable 'i' is never used (Code Smell)
-        pass
-
-    x = 1 / 0  # Division by zero (Bug)
-
-    if True:  # Hardcoded condition (Code Smell)
-        print("This is always executed.")
-
+def greet_sonarqube():
+    """Prints a greeting message."""
     print("Hello, SonarQube!")
 
 
-def badly_named_function():  # Function name does not follow naming conventions
-    a = "1"
-    b = 1
-    c = a + b  # Type mismatch: string + int (Bug)
-    return c
+def safe_division(a: float, b: float) -> float:
+    """Performs division safely, handling division by zero."""
+    if b == 0:
+        raise ValueError("Division by zero is not allowed.")  # Proper error handling
+    return a / b
+
+
+def sum_numbers(a: int, b: int) -> int:
+    """Returns the sum of two integers."""
+    return a + b
 
 
 if __name__ == "__main__":
-    sample_function()
-    badly_named_function()
+    greet_sonarqube()
+    
+    try:
+        result = safe_division(10, 2)
+        print(f"Division result: {result}")
+    except ValueError as e:
+        print(f"Error: {e}")
+
+    total = sum_numbers(5, 7)
+    print(f"Sum of numbers: {total}")
+
+
