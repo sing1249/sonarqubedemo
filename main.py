@@ -3,7 +3,7 @@
 
 # Sample Python Function with a Code Smell (Unused variable)
 def sample_function():
-    unused_variable = 10  # SonarQube should flag this as an issue
+   # unused_variable = 10  # SonarQube should flag this as an issue
     print("Hello, SonarQube!")
 
 if __name__ == "__main__":
