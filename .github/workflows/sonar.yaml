@@ -32,7 +32,7 @@ jobs:
       - name: Run SonarQube Scanner
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=sonarqube_demo_project \
+            -Dsonar.projectKey=sing1249_sonarqubedemo \
             -Dsonar.organization=sing1249 \
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarcloud.io \
