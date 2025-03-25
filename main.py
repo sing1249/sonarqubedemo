@@ -22,6 +22,7 @@ def badly_named_function():  # Function name does not follow naming conventions
     c = a + b  # Type mismatch: string + int (Bug)
     return c
 
+print("hello")
 
 if __name__ == "__main__":
     sample_function()
